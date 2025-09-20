@@ -1,0 +1,184 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Custom font faces for Rivayat brand typography */
+@font-face {
+  font-family: "Alcazar";
+  src: url("/fonts/alcazar.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Shangri-La";
+  src: url("/fonts/shangri-la.woff2") format("woff2");
+  font-weight: 400 500 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated brand colors to new palette */
+  --riv-maroon: #480903;
+  --riv-parchment: #f3efe6;
+  --riv-burnt: #9f4011;
+  --riv-sand: #d6c8af;
+  --riv-olive: #485139;
+
+  /* Semantic Design Tokens */
+  --background: var(--riv-parchment);
+  --foreground: var(--riv-maroon);
+  --card: var(--riv-sand);
+  --card-foreground: var(--riv-maroon);
+  --popover: var(--riv-parchment);
+  --popover-foreground: var(--riv-maroon);
+  --primary: var(--riv-maroon);
+  --primary-foreground: var(--riv-parchment);
+  --secondary: var(--riv-olive);
+  --secondary-foreground: var(--riv-parchment);
+  --muted: oklch(from var(--riv-parchment) calc(l - 0.1) c h);
+  --muted-foreground: oklch(from var(--riv-maroon) calc(l + 0.2) c h);
+  --accent: var(--riv-burnt);
+  --accent-foreground: var(--riv-parchment);
+  --destructive: var(--riv-burnt);
+  --destructive-foreground: var(--riv-parchment);
+  --border: oklch(from var(--riv-olive) calc(l + 0.2) calc(c * 0.3) h);
+  --input: oklch(from var(--riv-parchment) calc(l - 0.05) c h);
+  --ring: var(--riv-olive);
+  --chart-1: var(--riv-burnt);
+  --chart-2: var(--riv-olive);
+  --chart-3: var(--riv-maroon);
+  --chart-4: oklch(from var(--riv-maroon) calc(l + 0.1) c h);
+  --chart-5: oklch(from var(--riv-parchment) calc(l - 0.2) c h);
+  --radius: 0.5rem;
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: var(--riv-maroon);
+  --foreground: var(--riv-parchment);
+  --card: oklch(from var(--riv-maroon) calc(l + 0.05) c h);
+  --card-foreground: var(--riv-parchment);
+  --popover: var(--riv-maroon);
+  --popover-foreground: var(--riv-parchment);
+  --primary: var(--riv-olive);
+  --primary-foreground: var(--riv-maroon);
+  --secondary: oklch(from var(--riv-maroon) calc(l + 0.1) c h);
+  --secondary-foreground: var(--riv-parchment);
+  --muted: oklch(from var(--riv-maroon) calc(l + 0.1) c h);
+  --muted-foreground: oklch(from var(--riv-parchment) calc(l - 0.3) c h);
+  --accent: var(--riv-burnt);
+  --accent-foreground: var(--riv-maroon);
+  --destructive: var(--riv-burnt);
+  --destructive-foreground: var(--riv-parchment);
+  --border: oklch(from var(--riv-maroon) calc(l + 0.15) c h);
+  --input: oklch(from var(--riv-maroon) calc(l + 0.1) c h);
+  --ring: var(--riv-olive);
+  --sidebar: oklch(0.145 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --font-serif: "Alcazar", "Playfair Display", serif;
+  --font-sans: "Shangri-La", "Noto Serif", "Noto Serif Devanagari", serif;
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans leading-relaxed;
+    /* Paper grain texture background */
+    background-image: radial-gradient(circle at 1px 1px, rgba(72, 9, 3, 0.03) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+
+  /* Typography scale with generous line heights */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif text-balance;
+    font-feature-settings: "liga" 1, "kern" 1;
+  }
+
+  p,
+  li {
+    @apply text-pretty leading-relaxed;
+  }
+
+  /* Retro pattern overlay utility */
+  .retro-pattern {
+    background-image: url("/brand/retro-pattern.jpg");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    opacity: 0.1;
+  }
+
+  /* Story section styling */
+  .story-section {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .story-section h1,
+  .story-section h2,
+  .story-section h3 {
+    @apply text-secondary;
+  }
+}
