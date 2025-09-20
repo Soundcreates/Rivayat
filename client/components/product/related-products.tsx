@@ -15,7 +15,7 @@ const relatedProducts = [
     price: 1200,
     mrp: 1500,
     rating: 4.6,
-    image: "/cotton-kurta.jpg",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376866/cotton-kurta_iccoxh.jpg",
     artisan: "Ravi Kumar",
   },
   {

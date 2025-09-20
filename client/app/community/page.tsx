@@ -31,7 +31,7 @@ export default function CommunityPage() {
       likes: 1240,
       comments: 89,
       shares: 45,
-      thumbnail: "/weaving-process.jpg",
+      thumbnail: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376867/weaving-process_nefwwk.jpg",
     },
     {
       id: "2",
@@ -41,7 +41,7 @@ export default function CommunityPage() {
       likes: 856,
       comments: 67,
       shares: 32,
-      thumbnail: "/block-printing.jpg",
+      thumbnail: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376864/block-printing_mnu3w7.jpg",
     },
     {
       id: "3",
@@ -51,7 +51,7 @@ export default function CommunityPage() {
       likes: 2100,
       comments: 156,
       shares: 78,
-      thumbnail: "/silk-border.jpg",
+      thumbnail: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376871/silk-border_lbq49o.jpg",
     },
   ]
 

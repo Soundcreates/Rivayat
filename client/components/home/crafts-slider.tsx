@@ -55,7 +55,7 @@ export function CraftsSlider() {
                   <Card className="mx-2 overflow-hidden shadow-lg">
                     <div className="relative h-64 md:h-80">
                       <Image
-                        src={`/abstract-geometric-shapes.png?height=320&width=600&query=${craft.name} ${craft.specialty} traditional Indian crafts`}
+                        src={`https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376864/abstract-geometric-shapes_wd08hd.png?height=320&width=600&query=${craft.name} ${craft.specialty} traditional Indian crafts`}
                         alt={`${craft.name} - ${craft.specialty}`}
                         fill
                         className="object-cover"

@@ -14,7 +14,7 @@ const posts = [
     date: "2024-01-15",
     readTime: "8 min read",
     category: "Heritage",
-    image: "/banarasi-silk-weaving-loom-traditional.jpg",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376865/banarasi-silk-weaving-loom-traditional_envlgj.jpg",
     slug: "banarasi-weave-kashi-legacy",
   },
   {
@@ -26,7 +26,7 @@ const posts = [
     date: "2024-01-12",
     readTime: "6 min read",
     category: "Techniques",
-    image: "/dhokra-bronze-casting-tribal-art.jpg",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376867/dhokra-bronze-casting-tribal-art_nso47g.jpg",
     slug: "dhokra-metal-casting",
   },
   {
@@ -38,7 +38,7 @@ const posts = [
     date: "2024-01-10",
     readTime: "7 min read",
     category: "Craft Stories",
-    image: "/ajrakh-block-printing-indigo-patterns.jpg",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376866/ajrakh-block-printing-indigo-patterns_pdysh2.jpg",
     slug: "ajrakh-indigo-madder",
   },
   {
@@ -50,7 +50,7 @@ const posts = [
     date: "2024-01-08",
     readTime: "5 min read",
     category: "Artisan Profiles",
-    image: "/channapatna-wooden-toys-lacquered-colorful.jpg",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376866/channapatna-wooden-toys-lacquered-colorful_arrqdw.jpg",
     slug: "channapatna-lacquered-toys",
   },
 ]

@@ -64,7 +64,7 @@ export default function AuthPage() {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <img src="/brand/logo.png" alt="Rivayat" className="h-12 mx-auto mb-4" />
+          <img src="https://res.cloudinary.com/dsmxrbinn/image/upload/v1758380091/logo_hng7q9.png" alt="Rivayat" className="h-12 mx-auto mb-4" />
           <h1 className="text-2xl font-bold text-riv-maroon">Welcome to Rivayat</h1>
           <p className="text-riv-maroon/70">Discover authentic Indian crafts</p>
         </div>

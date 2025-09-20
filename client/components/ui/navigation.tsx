@@ -37,7 +37,7 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-6">
             <Link href="/" className="flex items-center space-x-2 w-32 h-10" aria-label="Rivayat Home">
-              <Image src="/brand/logo.png" alt="Rivayat" width={40} height={40} className="w-10 h-10" />
+              <Image src="https://res.cloudinary.com/dsmxrbinn/image/upload/v1758380091/logo_hng7q9.png" alt="Rivayat" width={40} height={40} className="w-10 h-10" />
               <span className="font-serif text-xl font-bold text-primary">Rivayat</span>
             </Link>
 

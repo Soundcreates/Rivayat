@@ -14,7 +14,7 @@ const featuredArtisan = {
   reviewCount: 127,
   story:
     "Third-generation block printer preserving 200-year-old family techniques. Meera creates intricate patterns using hand-carved wooden blocks, each design telling stories of Rajasthani heritage.",
-  image: "/indian-woman-artisan-block-printing-traditional-cr.jpg",
+  image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376868/indian-woman-artisan-block-printing-traditional-cr_vnejib.jpg",
   verified: true,
   totalProducts: 45,
 }

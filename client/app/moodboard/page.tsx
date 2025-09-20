@@ -39,7 +39,7 @@ export default function MoodboardPage() {
             title: "Handwoven Silk Saree",
             artisan: "Meera Devi",
             price: 8500,
-            image: "/banarasi-silk-saree.jpg",
+            image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376863/banarasi-silk-saree_wjveka.jpg",
             similarity: 92,
           },
           {

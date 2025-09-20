@@ -29,7 +29,7 @@ export default function CheckoutPage() {
       price: 8500,
       mrp: 12000,
       quantity: 1,
-      image: "/banarasi-silk-saree.jpg",
+      image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376863/banarasi-silk-saree_wjveka.jpg",
     },
   ]
 

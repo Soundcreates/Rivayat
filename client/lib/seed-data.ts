@@ -45,7 +45,7 @@ export const seedProducts = [
     mrp: 18000,
     gstPercent: 5,
     stock: 3,
-    images: ["/banarasi-silk-saree.jpg"],
+    images: ["https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376863/banarasi-silk-saree_wjveka.jpg"],
     tags: ["handloom", "silk", "wedding", "traditional"],
     createdAt: "2024-01-10T00:00:00Z",
   },

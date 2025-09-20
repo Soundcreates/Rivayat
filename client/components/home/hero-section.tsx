@@ -8,7 +8,7 @@ export function HeroSection() {
       {/* Hero Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/brand/hero-weaver.jpg"
+          src="https://res.cloudinary.com/dsmxrbinn/image/upload/v1758380232/hero-weaver_otrxen.jpg"
           alt="A Weaver's Story"
           fill
           className="object-cover"

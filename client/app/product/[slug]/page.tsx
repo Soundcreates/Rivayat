@@ -16,8 +16,8 @@ const product = {
   price: 4500,
   mrp: 5500,
   images: [
-    "/elegant-silk-saree.png",
-    "/banarasi-silk-saree-detail.jpg",
+    "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376867/elegant-silk-saree_kek3qh.png",
+    "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376863/banarasi-silk-saree_wjveka.jpg",
     "/silk-saree-border-design.jpg",
     "/silk-saree-pallu-design.jpg",
   ],
@@ -28,7 +28,7 @@ const product = {
     id: "1",
     name: "Meera Devi",
     location: "Varanasi, Uttar Pradesh",
-    avatar: "/indian-woman-artisan.jpg",
+    avatar: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376868/indian-woman-artisan-block-printing-traditional-cr_vnejib.jpg",
     verified: true,
   },
   specifications: {

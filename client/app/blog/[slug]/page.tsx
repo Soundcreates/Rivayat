@@ -13,7 +13,7 @@ const blogPosts = {
     readTime: "8 min read",
     category: "Heritage",
     tags: ["Banarasi", "Silk", "Weaving", "Varanasi", "Heritage"],
-    heroImage: "/banarasi-silk-weaving-loom-master-craftsman.jpg",
+    heroImage: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376864/banarasi-silk-weaving-loom-master-craftsman_nv578v.jpg",
     content: `
       <p>In the narrow lanes of Varanasi, where the Ganges flows eternal, lives a tradition that has adorned royalty for over 500 years. The Banarasi weave, with its intricate patterns and lustrous silk, represents the pinnacle of Indian textile artistry.</p>
       
@@ -33,7 +33,7 @@ const blogPosts = {
     readTime: "6 min read",
     category: "Techniques",
     tags: ["Dhokra", "Bronze", "Casting", "Tribal Art", "Metal Work"],
-    heroImage: "/dhokra-bronze-casting-tribal-artisan-workshop.jpg",
+    heroImage: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376867/dhokra-bronze-casting-tribal-artisan-workshop_oucqrt.jpg",
     content: `
       <p>Deep in the forests of Chhattisgarh, where ancient traditions still thrive, the Dhokra artisans practice a craft that dates back 4,000 years. This lost-wax casting technique creates bronze sculptures that are both primitive and sophisticated.</p>
       
@@ -53,7 +53,7 @@ const blogPosts = {
     readTime: "7 min read",
     category: "Craft Stories",
     tags: ["Ajrakh", "Block Printing", "Indigo", "Natural Dyes", "Gujarat"],
-    heroImage: "/ajrakh-block-printing-indigo-dye-traditional-patte.jpg",
+    heroImage: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376864/ajrakh-block-printing-indigo-dye-traditional-patte_jwmto4.jpg",
     content: `
       <p>Under the scorching sun of Kutch, where the desert meets the sea, lies the village of Ajrakhpur. Here, the ancient art of Ajrakh printing transforms plain cotton into mesmerizing tapestries of indigo and madder.</p>
       
@@ -75,7 +75,7 @@ const blogPosts = {
     readTime: "5 min read",
     category: "Artisan Profiles",
     tags: ["Channapatna", "Toys", "Lacquer", "Wood Craft", "Karnataka"],
-    heroImage: "/channapatna-wooden-toys-colorful-lacquered-traditi.jpg",
+    heroImage: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376865/channapatna-wooden-toys-colorful-lacquered-traditi_gqvqhm.jpg",
     content: `
       <p>In the small town of Channapatna, 60 kilometers from Bangalore, the sound of lathes fills the air as artisans transform simple wood into objects of joy. These are the makers of Channapatna toys, India's answer to European wooden toys, but with a vibrancy uniquely their own.</p>
       
