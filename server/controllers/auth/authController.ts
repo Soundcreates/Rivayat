@@ -32,7 +32,7 @@ export const registerController = async (
     const hashedPassword = await bcrypt.hash(password, salt); // this is the hashed password
 
     //creating the new user once all the checks have been passed
-    const newUser = userModel.create({
+    const newUser = await userModel.create({
       firstName,
       lastName,
       username,
@@ -44,10 +44,10 @@ export const registerController = async (
     //signing the jwt token (ronaldo is better)
 
     const token = jwt.sign(
-      { id: (await newUser)._id, email: (await newUser).email },
+      { id: newUser._id, email: newUser.email },
       process.env.JWT_SECRET as string,
       { expiresIn: "1d" },
-      (err, token) => {
+      (err: Error | null, token?: string) => {
         if (err) {
           console.log("Error at jwt sign", err);
           return res.status(500).json({ message: "Internal server error" });
@@ -65,12 +65,12 @@ export const registerController = async (
       message: "User registered successfully",
       token,
       user: {
-        id: (await newUser)._id,
-        firstName: (await newUser).firstName,
-        lastName: (await newUser).lastName,
-        email: (await newUser).email,
-        username: (await newUser).username,
-        phoneNumber: (await newUser).phoneNumber,
+        id:  newUser._id,
+        firstName: newUser.firstName,
+        lastName: newUser.lastName,
+        email: newUser.email,
+        username: newUser.username,
+        phoneNumber: newUser.phoneNumber,
       },
     });
   } catch (err) {
@@ -94,6 +94,53 @@ export const loginController = async (
     if (!password) {
       return res.status(400).json({ message: "Password is required" });
     }
+
+    const User = await userModel.findOne({ email });
+
+    if(!User){
+      return res.status(401).json("User does not exist");
+    }
+
+    const validPassword = await bcrypt.compare(password, User.password);
+    
+    if(phoneNumber != User.phoneNumber){
+      return res.status(401).json("Incorrect Phone Number");
+    }
+    
+    if(!validPassword){
+      return res.status(401).json("Incorrect Password");
+    }
+
+    const token = jwt.sign(
+      { id: User._id, email: User.email },
+      process.env.JWT_SECRET as string,
+      { expiresIn: "1d" },
+      (err: Error | null, token?: string) => {
+        if (err) {
+          console.log("Error at jwt sign", err);
+          return res.status(500).json({ message: "Internal server error" });
+        }
+      }
+    );
+    process.env.PROJECT_MODE === "development" &&
+      console.log(
+        "User is Logged In successfully with token: ",
+        token,
+        "user: ",
+        User
+      );
+    return res.status(201).json({
+      message: "User Loggged in successfully",
+      token,
+      user: {
+        id: User._id,
+        firstName: User.firstName,
+        lastName:  User.lastName,
+        email:  User.email,
+        username: User.username,
+        phoneNumber: User.phoneNumber,
+      },
+    });
 
     //TODO : complete the login controller logic
   } catch (err) {
