@@ -3,6 +3,11 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/connectDB";
 
+//importing routes
+import authRouter from "./routes/authRoutes";
+import userRouter from "./routes/userRoutes";
+
+//dotenv setup
 dotenv.config();
 
 const app = express();
@@ -23,6 +28,10 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const PORT = process.env.PORT;
+
+//setting up routes
+app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
 
 app.listen(PORT, () => {
   connectDB();
