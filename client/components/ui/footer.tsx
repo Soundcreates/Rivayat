@@ -2,6 +2,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { Instagram, Facebook, Twitter, Mail } from "lucide-react"
 import { NAVIGATION, SITE_CONFIG } from "@/lib/config"
+import { LogoLink } from "@/components/ui/logo-link"
+
 
 export function Footer() {
   return (
@@ -11,16 +13,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <Image
-                src="https://res.cloudinary.com/dsmxrbinn/image/upload/v1758380091/logo_hng7q9.png"
-                alt="Rivayat"
-                width={40}
-                height={40}
-                className="w-10 h-10 brightness-0 invert"
-              />
-              <span className="font-serif text-xl font-bold text-[var(--riv-sand)]">Rivayat</span>
-            </Link>
+            <LogoLink />
             <p className="text-primary-foreground/80 mb-6 max-w-md leading-relaxed">
               Connecting you with India's finest artisans and their timeless stories. Every purchase supports
               traditional craftsmanship and empowers communities.

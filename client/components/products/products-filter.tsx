@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Slider } from "@/components/ui/slider"
@@ -13,18 +13,30 @@ const craftTypes = CRAFT_CATEGORIES.map((c) => c.name)
 const states = [...new Set(CITIES.map((c) => c.state))]
 const badges = ["Handloom", "GI Tagged", "Cooperative", "Verified Artisan"]
 
-export function ProductsFilter() {
+type ProductsFilterProps = {
+  onChange?: (filters: {
+    priceRange: number[]
+    selectedFilters: string[]
+  }) => void
+}
+
+export function ProductsFilter({ onChange }: ProductsFilterProps) {
   const [priceRange, setPriceRange] = useState([0, 10000])
   const [selectedFilters, setSelectedFilters] = useState<string[]>([])
 
+  // Notify parent every time filters change
+  useEffect(() => {
+    onChange?.({ priceRange, selectedFilters })
+  }, [priceRange, selectedFilters, onChange])
+
   const addFilter = (filter: string) => {
     if (!selectedFilters.includes(filter)) {
-      setSelectedFilters([...selectedFilters, filter])
+      setSelectedFilters((prev) => [...prev, filter])
     }
   }
 
   const removeFilter = (filter: string) => {
-    setSelectedFilters(selectedFilters.filter((f) => f !== filter))
+    setSelectedFilters((prev) => prev.filter((f) => f !== filter))
   }
 
   const clearAllFilters = () => {
@@ -70,7 +82,13 @@ export function ProductsFilter() {
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <Slider value={priceRange} onValueChange={setPriceRange} max={10000} step={100} className="w-full" />
+            <Slider
+              value={priceRange}
+              onValueChange={setPriceRange}
+              max={10000}
+              step={100}
+              className="w-full"
+            />
             <div className="flex items-center justify-between text-sm text-muted-foreground">
               <span>₹{priceRange[0]}</span>
               <span>₹{priceRange[1]}+</span>
@@ -91,14 +109,13 @@ export function ProductsFilter() {
                 <Checkbox
                   id={craft}
                   checked={selectedFilters.includes(craft)}
-                  onCheckedChange={(checked) => {
-                    if (checked) addFilter(craft)
-                    else removeFilter(craft)
-                  }}
+                  onCheckedChange={(checked) =>
+                    checked ? addFilter(craft) : removeFilter(craft)
+                  }
                 />
                 <label
                   htmlFor={craft}
-                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                  className="text-sm font-medium leading-none cursor-pointer"
                 >
                   {craft}
                 </label>
@@ -120,14 +137,13 @@ export function ProductsFilter() {
                 <Checkbox
                   id={state}
                   checked={selectedFilters.includes(state)}
-                  onCheckedChange={(checked) => {
-                    if (checked) addFilter(state)
-                    else removeFilter(state)
-                  }}
+                  onCheckedChange={(checked) =>
+                    checked ? addFilter(state) : removeFilter(state)
+                  }
                 />
                 <label
                   htmlFor={state}
-                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                  className="text-sm font-medium leading-none cursor-pointer"
                 >
                   {state}
                 </label>
@@ -149,14 +165,13 @@ export function ProductsFilter() {
                 <Checkbox
                   id={badge}
                   checked={selectedFilters.includes(badge)}
-                  onCheckedChange={(checked) => {
-                    if (checked) addFilter(badge)
-                    else removeFilter(badge)
-                  }}
+                  onCheckedChange={(checked) =>
+                    checked ? addFilter(badge) : removeFilter(badge)
+                  }
                 />
                 <label
                   htmlFor={badge}
-                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                  className="text-sm font-medium leading-none cursor-pointer"
                 >
                   {badge}
                 </label>
