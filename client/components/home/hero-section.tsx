@@ -12,7 +12,7 @@ export function HeroSection() {
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{
           backgroundImage:
-            "url('https://res.cloudinary.com/dsmxrbinn/image/upload/v1758456407/website_bg_ystx1d.jpg')",
+            "url('https://res.cloudinary.com/dsmxrbinn/image/upload/v1758472907/website_bg_vn97ll.png')",
         }}
       >
         <div className="absolute inset-0 bg-primary/60" />
