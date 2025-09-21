@@ -38,7 +38,10 @@ export default function AuthPage() {
     setTimeout(() => {
       setIsLoading(false)
       if (otp === "123456") {
-        // Redirect based on role
+        document.cookie = `riv_auth=ok; path=/; max-age=86400; samesite=lax`
+        if (role) document.cookie = `riv_role=${role}; path=/; max-age=86400; samesite=lax`
+
+        // Redirect based on role     
         if (role === "artisan") {
           window.location.href = "/dashboard"
         } else {

@@ -19,7 +19,7 @@ export function Footer() {
                 height={40}
                 className="w-10 h-10 brightness-0 invert"
               />
-              <span className="font-serif text-xl font-bold text-secondary">Rivayat</span>
+              <span className="font-serif text-xl font-bold text-[var(--riv-sand)]">Rivayat</span>
             </Link>
             <p className="text-primary-foreground/80 mb-6 max-w-md leading-relaxed">
               Connecting you with India's finest artisans and their timeless stories. Every purchase supports
@@ -55,7 +55,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-serif text-lg font-semibold text-secondary mb-4">Quick Links</h3>
+            <h3 className="font-serif text-lg font-semibold text-[var(--riv-sand)] mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {NAVIGATION.footer.slice(0, 3).map((item) => (
                 <li key={item.name}>
@@ -69,7 +69,7 @@ export function Footer() {
 
           {/* Support */}
           <div>
-            <h3 className="font-serif text-lg font-semibold text-secondary mb-4">Support</h3>
+            <h3 className="font-serif text-lg font-semibold text-[var(--riv-sand)] mb-4">Support</h3>
             <ul className="space-y-2">
               {NAVIGATION.footer.slice(3).map((item) => (
                 <li key={item.name}>

@@ -1,30 +1,41 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
-export function middleware(request: NextRequest) {
-  // Get auth token from cookies or headers
-  const authCookie = request.cookies.get("rivayat-auth")
-  const isAuthenticated = authCookie?.value ? true : false
+export function middleware(req: NextRequest) {
+  const { pathname } = req.nextUrl
+  const auth = req.cookies.get("riv_auth")?.value
 
-  // Protected routes that require authentication
-  const protectedRoutes = ["/dashboard", "/profile"]
-  const artisanOnlyRoutes = ["/dashboard"]
+  // Public paths that never need auth
+  const publicPaths = [
+    "/",
+    "/home",
+    "/landing",
+    "/auth",
+    "/products",
+    "/product",
+    "/blog",
+    "/artisans",
+    "/moodboard",
+    "/_next",        // assets
+    "/api/public",   // if any
+  ]
 
-  const { pathname } = request.nextUrl
-
-  // Check if route requires authentication
-  const requiresAuth = protectedRoutes.some((route) => pathname.startsWith(route))
-
-  if (requiresAuth && !isAuthenticated) {
-    return NextResponse.redirect(new URL("/auth", request.url))
+  // Allow public paths
+  if (publicPaths.some(p => pathname === p || pathname.startsWith(p + "/"))) {
+    return NextResponse.next()
   }
 
-  // Check artisan-only routes
-  const requiresArtisan = artisanOnlyRoutes.some((route) => pathname.startsWith(route))
+  // Protect only these paths for now
+  const protectedPrefixes = ["/dashboard", "/checkout", "/profile"]
 
-  if (requiresArtisan && isAuthenticated) {
-    // In a real app, you'd decode the auth token to check user type
-    // For now, we'll let the client-side handle this
+  const isProtected = protectedPrefixes.some(p => pathname === p || pathname.startsWith(p + "/"))
+
+  if (isProtected && !auth) {
+    const url = req.nextUrl.clone()
+    url.pathname = "/auth"
+    // keep role=artisan for dashboard attempts
+    if (pathname.startsWith("/dashboard")) url.searchParams.set("role", "artisan")
+    return NextResponse.redirect(url)
   }
 
   return NextResponse.next()
@@ -32,14 +43,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public folder
-     */
-    "/((?!api|_next/static|_next/image|favicon.ico|public).*)",
+    "/((?!_next/static|_next/image|favicon.ico|public|api/webhooks).*)",
   ],
 }

@@ -25,7 +25,7 @@ export function ArtisanOfWeek() {
       <div className="retro-pattern absolute inset-0" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-secondary mb-4">Artisan of the Week</h2>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-[var(--riv-parchment)] mb-4">Artisan of the Week</h2>
           <p className="text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed">
             Meet the talented hands behind extraordinary crafts
           </p>

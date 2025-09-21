@@ -65,30 +65,27 @@ export function Navigation() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-primary hover:text-accent min-h-[44px] min-w-[44px]"
+            <span
               onClick={handleSearch}
-              aria-label="Search products"
+              role="button"
+              tabIndex={0}
+              className="cursor-pointer text-primary hover:text-accent transition-colors font-medium min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-ring rounded-md"
             >
               <Search className="w-4 h-4" />
-            </Button>
+            </span>
 
-            <Link href="/cart" aria-label="Shopping cart">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="relative text-primary hover:text-accent min-h-[44px] min-w-[44px]"
-              >
-                <ShoppingCart className="w-4 h-4" />
-                {getTotalItems() > 0 && (
-                  <Badge className="absolute -top-1 -right-1 bg-accent text-white text-xs w-5 h-5 flex items-center justify-center p-0">
-                    {getTotalItems()}
-                  </Badge>
-                )}
-              </Button>
-            </Link>
+
+           <Link href="/cart" aria-label="Shopping cart">
+            <span className="relative text-primary hover:text-accent transition-colors font-medium min-h-[44px] min-w-[44px] flex items-center justify-center">
+              <ShoppingCart className="w-4 h-4" />
+              {getTotalItems() > 0 && (
+                <Badge className="absolute -top-1 -right-1 bg-accent text-white text-xs w-5 h-5 flex items-center justify-center p-0">
+                  {getTotalItems()}
+                </Badge>
+              )}
+            </span>
+          </Link>
+
 
             {isAuthenticated ? (
               <DropdownMenu>
@@ -135,19 +132,19 @@ export function Navigation() {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Link href="/auth" aria-label="Login">
-                <Button variant="ghost" size="sm" className="text-primary hover:text-accent min-h-[44px] min-w-[44px]">
-                  <User className="w-4 h-4 mr-2" />
-                  Login
-                </Button>
-              </Link>
+              <Link href="/myprofile" aria-label="My Profile">
+              <span className="text-primary hover:text-accent transition-colors font-medium min-h-[44px] min-w-[44px] flex items-center justify-center">
+                <User className="w-4 h-4 mr-2" />
+                Profile
+              </span>
+            </Link>
             )}
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <Button
-              variant="ghost"
+              // variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
               className="text-primary min-h-[44px] min-w-[44px]"
@@ -182,16 +179,17 @@ export function Navigation() {
               )}
 
               <div className="flex items-center space-x-4 pt-4 border-t border-primary/20">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-primary min-h-[44px] min-w-[44px]"
+                <span
                   onClick={handleSearch}
+                  role="button"
+                  tabIndex={0}
+                  className="cursor-pointer text-primary hover:text-accent transition-colors font-medium min-h-[44px] flex items-center"
                 >
                   <Search className="w-4 h-4" />
-                </Button>
+                </span>
+
                 <Link href="/cart">
-                  <Button variant="ghost" size="sm" className="relative text-primary min-h-[44px] min-w-[44px]">
+                  <Button size="sm" className="relative text-primary min-h-[44px] min-w-[44px]">
                     <ShoppingCart className="w-4 h-4" />
                     {getTotalItems() > 0 && (
                       <Badge className="absolute -top-1 -right-1 bg-accent text-white text-xs w-5 h-5 flex items-center justify-center p-0">
@@ -200,13 +198,13 @@ export function Navigation() {
                     )}
                   </Button>
                 </Link>
-                {!isAuthenticated && (
+                {/* {!isAuthenticated && (
                   <Link href="/auth">
                     <Button variant="ghost" size="sm" className="text-primary min-h-[44px] min-w-[44px]">
                       <User className="w-4 h-4" />
                     </Button>
                   </Link>
-                )}
+                )} */}
               </div>
 
               {isAuthenticated && (

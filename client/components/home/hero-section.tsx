@@ -20,7 +20,7 @@ export function HeroSection() {
 
       {/* Hero Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-secondary mb-6 text-balance">
+        <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-[var(--riv-parchment)] mb-6 text-balance">
           A Weaver's Story
         </h1>
         <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed text-pretty">
@@ -32,7 +32,7 @@ export function HeroSection() {
             asChild
             variant="outline"
             size="lg"
-            className="border-secondary text-secondary hover:bg-secondary hover:text-primary font-semibold px-8 py-3 bg-transparent"
+            className="border-[var(--riv-parchment)] text-[var(--riv-parchment)] hover:bg-[var(--riv-parchment)] hover:text-[var(--riv-maroon)] font-semibold px-8 py-3 bg-transparent"
           >
             <Link href="/artisans">Meet the Artisans</Link>
           </Button>

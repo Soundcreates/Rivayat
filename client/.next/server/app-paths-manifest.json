@@ -1,7 +1,9 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/artisans/page": "app/artisans/page.js",
+  "/home/page": "app/home/page.js",
   "/page": "app/page.js",
-  "/products/page": "app/products/page.js",
-  "/community/page": "app/community/page.js"
+  "/landing/page": "app/landing/page.js",
+  "/auth/page": "app/auth/page.js",
+  "/dashboard/profile/page": "app/dashboard/profile/page.js",
+  "/dashboard/page": "app/dashboard/page.js"
 }
