@@ -6,6 +6,7 @@
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
+    --font-serif: "Alcazar", "Playfair Display", serif;
     --color-red-50: oklch(97.1% 0.013 17.38);
     --color-red-100: oklch(93.6% 0.032 17.717);
     --color-red-200: oklch(88.5% 0.062 18.334);
@@ -64,8 +65,8 @@
     --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
-    --text-7xl: 4.5rem;
-    --text-7xl--line-height: 1;
+    --text-8xl: 6rem;
+    --text-8xl--line-height: 1;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
@@ -1866,6 +1867,10 @@
   .text-4xl {
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-5xl {
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
   .text-base {
     font-size: var(--text-base);
@@ -4630,6 +4635,12 @@
       text-align: left;
     }
   }
+  .md\:text-3xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
   .md\:text-4xl {
     @media (width >= 48rem) {
       font-size: var(--text-4xl);
@@ -4642,22 +4653,16 @@
       line-height: var(--tw-leading, var(--text-5xl--line-height));
     }
   }
-  .md\:text-6xl {
+  .md\:text-8xl {
     @media (width >= 48rem) {
-      font-size: var(--text-6xl);
-      line-height: var(--tw-leading, var(--text-6xl--line-height));
+      font-size: var(--text-8xl);
+      line-height: var(--tw-leading, var(--text-8xl--line-height));
     }
   }
   .md\:text-sm {
     @media (width >= 48rem) {
       font-size: var(--text-sm);
       line-height: var(--tw-leading, var(--text-sm--line-height));
-    }
-  }
-  .md\:text-xl {
-    @media (width >= 48rem) {
-      font-size: var(--text-xl);
-      line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
   .md\:opacity-0 {
@@ -4746,10 +4751,10 @@
       padding-inline: calc(var(--spacing) * 8);
     }
   }
-  .lg\:text-7xl {
+  .lg\:text-6xl {
     @media (width >= 64rem) {
-      font-size: var(--text-7xl);
-      line-height: var(--tw-leading, var(--text-7xl--line-height));
+      font-size: var(--text-6xl);
+      line-height: var(--tw-leading, var(--text-6xl--line-height));
     }
   }
   .dark\:border-input {
@@ -5457,17 +5462,52 @@
 }
 @font-face {
   font-family: "Alcazar";
-  src: url("/fonts/alcazar.woff2") format("woff2");
-  font-weight: 400 700;
+  src: url("/fonts/alcazar-regular.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+body {
+  font-size: 18px;
+  line-height: 1.6;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.75rem;
+}
+h5 {
+  font-size: 1.5rem;
+}
+h6 {
+  font-size: 1.25rem;
+}
+p {
+  font-size: 1.25rem;
+}
 @font-face {
   font-family: "Shangri-La";
-  src: url("/fonts/shangri-la.woff2") format("woff2");
-  font-weight: 400 500 600;
+  src: url("/fonts/Shangrilanf-Xr5Z.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+:root {
+  --font-heading: "Alcazar", sans-serif;
+  --font-serif: "Shangri-La", serif;
+}
+.font-heading {
+  font-family: var(--font-heading);
+}
+.font-serif {
+  font-family: var(--font-serif);
 }
 :root {
   --riv-maroon: #480903;

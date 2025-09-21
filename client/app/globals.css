@@ -4,18 +4,69 @@
 /* Custom font faces for Rivayat brand typography */
 @font-face {
   font-family: "Alcazar";
-  src: url("/fonts/alcazar.woff2") format("woff2");
-  font-weight: 400 700;
+  src: url("/fonts/alcazar-regular.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
+/* Base font for all text */
+body {
+  font-size: 18px; /* previously 16px */
+  line-height: 1.6;
+}
+
+/* Headings scaling */
+h1 {
+  font-size: 3rem; /* previously smaller */
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+h6 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 1.25rem; 
+}
+
+/* Shangri-La */
 @font-face {
   font-family: "Shangri-La";
-  src: url("/fonts/shangri-la.woff2") format("woff2");
-  font-weight: 400 500 600;
+  src: url("/fonts/Shangrilanf-Xr5Z.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+
+/* Tailwind Custom Fonts */
+:root {
+  --font-heading: "Alcazar", sans-serif;
+  --font-serif: "Shangri-La", serif;
+}
+
+/* Example usage */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
 }
 
 @custom-variant dark (&:is(.dark *));
