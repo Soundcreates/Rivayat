@@ -115,13 +115,8 @@ export const loginController = async (
       { id: User._id, email: User.email },
       process.env.JWT_SECRET as string,
       { expiresIn: "1d" },
-      (err: Error | null, token?: string) => {
-        if (err) {
-          console.log("Error at jwt sign", err);
-          return res.status(500).json({ message: "Internal server error" });
-        }
-      }
     );
+    
     process.env.PROJECT_MODE === "development" &&
       console.log(
         "User is Logged In successfully with token: ",
@@ -130,7 +125,7 @@ export const loginController = async (
         User
       );
     return res.status(201).json({
-      message: "User Loggged in successfully",
+      message: "User Logged in successfully",
       token,
       user: {
         id: User._id,
@@ -142,7 +137,6 @@ export const loginController = async (
       },
     });
 
-    //TODO : complete the login controller logic
   } catch (err) {
     console.log("Error at login controller", err);
     return res.status(500).json({ message: "Internal server error" });

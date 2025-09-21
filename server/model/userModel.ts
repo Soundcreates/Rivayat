@@ -25,6 +25,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  userType: {
+    type: String,
+    enum: ["Customer", "Artisan"], // only allow these two values
+    required: true,
+  },
 });
 
 const userModel = mongoose.model("User", userSchema);
