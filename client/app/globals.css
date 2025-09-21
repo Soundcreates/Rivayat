@@ -10,11 +10,32 @@
   font-display: swap;
 }
 
-/* Base font for all text */
+@font-face {
+  font-family: "YatraOne";
+  src: url("/fonts/YatraOne-Regular.ttf") format("truetype");
+  font-weight: 20;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Samarkan";
+  src: url("/fonts/SAMARN__.TTF") format("truetype");
+  font-weight: 20;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
-  font-size: 18px; /* previously 16px */
+  font-family: "YatraOne", sans-serif;
+  font-size: 18px;
   line-height: 1.6;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
 
 /* Headings scaling */
 h1 {
@@ -56,8 +77,8 @@ p {
 
 /* Tailwind Custom Fonts */
 :root {
-  --font-heading: "Alcazar", sans-serif;
-  --font-serif: "Shangri-La", serif;
+  --font-heading: "Samarkan", sans-serif;
+  --font-serif: "YatraOne", serif;
 }
 
 /* Example usage */

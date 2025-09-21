@@ -707,6 +707,12 @@
   .h-32 {
     height: calc(var(--spacing) * 32);
   }
+  .h-50 {
+    height: calc(var(--spacing) * 50);
+  }
+  .h-60 {
+    height: calc(var(--spacing) * 60);
+  }
   .h-64 {
     height: calc(var(--spacing) * 64);
   }
@@ -1034,6 +1040,12 @@
   .translate-y-\[calc\(-50\%_-_2px\)\] {
     --tw-translate-y: calc(-50% - 2px);
     translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .scale-160 {
+    --tw-scale-x: 160%;
+    --tw-scale-y: 160%;
+    --tw-scale-z: 160%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
   }
   .rotate-45 {
     rotate: 45deg;
@@ -5467,9 +5479,27 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "YatraOne";
+  src: url("/fonts/YatraOne-Regular.ttf") format("truetype");
+  font-weight: 20;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Samarkan";
+  src: url("/fonts/SAMARN__.TTF") format("truetype");
+  font-weight: 20;
+  font-style: normal;
+  font-display: swap;
+}
 body {
+  font-family: "YatraOne", sans-serif;
   font-size: 18px;
   line-height: 1.6;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }
 h1 {
   font-size: 3rem;
@@ -5500,8 +5530,8 @@ p {
   font-display: swap;
 }
 :root {
-  --font-heading: "Alcazar", sans-serif;
-  --font-serif: "Shangri-La", serif;
+  --font-heading: "Samarkan", sans-serif;
+  --font-serif: "YatraOne", serif;
 }
 .font-heading {
   font-family: var(--font-heading);
@@ -5641,6 +5671,21 @@ p {
   syntax: "*";
   inherits: false;
   initial-value: 0;
+}
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
 }
 @property --tw-rotate-x {
   syntax: "*";
@@ -5918,21 +5963,6 @@ p {
   syntax: "*";
   inherits: false;
 }
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
 @property --tw-content {
   syntax: "*";
   initial-value: "";
@@ -6000,6 +6030,9 @@ p {
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
       --tw-rotate-x: initial;
       --tw-rotate-y: initial;
       --tw-rotate-z: initial;
@@ -6064,9 +6097,6 @@ p {
       --tw-backdrop-sepia: initial;
       --tw-duration: initial;
       --tw-ease: initial;
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
       --tw-content: "";
       --tw-animation-delay: 0s;
       --tw-animation-direction: normal;
