@@ -33,13 +33,44 @@ export const NAVIGATION = {
 } as const
 
 export const CITIES = [
-  { name: "Jaipur", state: "Rajasthan", specialty: "Block Printing & Jewelry" },
-  { name: "Varanasi", state: "Uttar Pradesh", specialty: "Silk Weaving" },
-  { name: "Kanchipuram", state: "Tamil Nadu", specialty: "Silk Sarees" },
-  { name: "Mysore", state: "Karnataka", specialty: "Silk & Sandalwood" },
-  { name: "Lucknow", state: "Uttar Pradesh", specialty: "Chikankari Embroidery" },
-  { name: "Jodhpur", state: "Rajasthan", specialty: "Leather & Textiles" },
+  { 
+    name: "Jaipur", 
+    state: "Rajasthan", 
+    specialty: "Block Printing & Jewelry",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758461472/jaipur_fd8eps.png"
+  },
+  { 
+    name: "Varanasi", 
+    state: "Uttar Pradesh", 
+    specialty: "Silk Weaving",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758461248/varanasi_e2fbb8.jpg"
+  },
+  { 
+    name: "Kanchipuram", 
+    state: "Tamil Nadu", 
+    specialty: "Silk Sarees",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758461248/kachipuram_ismp4d.jpg"
+  },
+  { 
+    name: "Mysore", 
+    state: "Karnataka", 
+    specialty: "Silk & Sandalwood",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758461529/mysore_pukrfn.png"
+  },
+  { 
+    name: "Lucknow", 
+    state: "Uttar Pradesh", 
+    specialty: "Chikankari Embroidery",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758461248/iko_ozyr9a.jpg"
+  },
+  { 
+    name: "Jodhpur", 
+    state: "Rajasthan", 
+    specialty: "Leather & Textiles",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758461248/jodhpur_rab9wm.jpg"
+  },
 ] as const
+
 
 export const CRAFT_CATEGORIES = [
   { name: "Clothing", icon: "👘", slug: "clothing" },

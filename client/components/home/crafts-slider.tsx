@@ -7,12 +7,42 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const craftsData = [
-  { name: "Clothing", specialty: "Traditional Textiles & Garments", slug: "clothing" },
-  { name: "Jewellery", specialty: "Handcrafted Ornaments & Accessories", slug: "jewellery" },
-  { name: "Home Decor", specialty: "Artistic Furnishings & Decoratives", slug: "home-decor" },
-  { name: "Wood Crafts", specialty: "Carved Sculptures & Furniture", slug: "wood-crafts" },
-  { name: "Metal Work", specialty: "Bronze, Brass & Silver Artistry", slug: "metal-work" },
-  { name: "Textiles", specialty: "Handwoven Fabrics & Weaves", slug: "textiles" },
+  { 
+    name: "Clothing", 
+    specialty: "Traditional Textiles & Garments", 
+    slug: "clothing",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758473410/clothing_gm3mhw.jpg"
+  },
+  { 
+    name: "Jewellery", 
+    specialty: "Handcrafted Ornaments & Accessories", 
+    slug: "jewellery",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758473410/jewellery_aao8pr.jpg"
+  },
+  { 
+    name: "Home Decor", 
+    specialty: "Artistic Furnishings & Decoratives", 
+    slug: "home-decor",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758473409/home_decor_jsimfj.jpg"
+  },
+  { 
+    name: "Wood Crafts", 
+    specialty: "Carved Sculptures & Furniture", 
+    slug: "wood-crafts",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758473449/wood_zflnus.png"
+  },
+  { 
+    name: "Metal Work", 
+    specialty: "Bronze, Brass & Silver Artistry", 
+    slug: "metal-work",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758473410/metal_work_jsqalt.jpg"
+  },
+  { 
+    name: "Textiles", 
+    specialty: "Handwoven Fabrics & Weaves", 
+    slug: "textiles",
+    image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758473409/Textile_bsbowq.jpg"
+  },
 ]
 
 export function CraftsSlider() {
@@ -55,12 +85,12 @@ export function CraftsSlider() {
                   <Card className="mx-2 overflow-hidden shadow-lg">
                     <div className="relative h-64 md:h-80">
                       <Image
-                        src={`https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376864/abstract-geometric-shapes_wd08hd.png?height=320&width=600&query=${craft.name} ${craft.specialty} traditional Indian crafts`}
-                        alt={`${craft.name} - ${craft.specialty}`}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 600px"
-                      />
+                          src={craft.image}
+                          alt={`${craft.name} - ${craft.specialty}`}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 600px"
+                        />
                       <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
                       <div className="absolute bottom-6 left-6 right-6 text-white">
                         <h3 className="font-serif text-2xl font-bold mb-2">{craft.name}</h3>

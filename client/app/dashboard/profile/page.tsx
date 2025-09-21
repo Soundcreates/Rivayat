@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { Camera, Plus, X, Instagram, Facebook, Twitter, Youtube, Globe } from "lucide-react"
 
 export default function ProfilePage() {
-  const [profileImage, setProfileImage] = useState("/artisan-profile.jpg")
+  const [profileImage, setProfileImage] = useState("https://res.cloudinary.com/dsmxrbinn/image/upload/v1758457562/artisan-profile_zslmol.jpg")
   const [socialLinks, setSocialLinks] = useState([
     { platform: "Instagram", url: "https://instagram.com/artisan", icon: Instagram },
     { platform: "Facebook", url: "https://facebook.com/artisan", icon: Facebook },
@@ -147,9 +147,9 @@ export default function ProfilePage() {
 
             {/* Sample Media Items */}
             {[
-              { type: "image", src: "/artisan-weaving-silk.jpg" },
+              { type: "image", src: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758457563/artisan-weaving-silk_vcafsp.jpg" },
               { type: "image", src: "/traditional-loom-workspace.jpg" },
-              { type: "image", src: "/handwoven-textile-patterns.jpg" },
+              { type: "image", src: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758457594/handwoven-textile-patterns_ricsvv.jpg" },
               { type: "video", src: "/weaving-process-video-thumbnail.jpg" },
             ].map((item, index) => (
               <div key={index} className="relative aspect-square rounded-lg overflow-hidden group">

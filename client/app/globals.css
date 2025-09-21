@@ -4,18 +4,99 @@
 /* Custom font faces for Rivayat brand typography */
 @font-face {
   font-family: "Alcazar";
-  src: url("/fonts/alcazar.woff2") format("woff2");
-  font-weight: 400 700;
+  src: url("/fonts/alcazar-regular.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Shangri-La";
-  src: url("/fonts/shangri-la.woff2") format("woff2");
-  font-weight: 400 500 600;
+  font-family: "YatraOne";
+  src: url("/fonts/YatraOne-Regular.ttf") format("truetype");
+  font-weight: 20;
   font-style: normal;
   font-display: swap;
+}
+
+@font-face {
+  font-family: "Begum";
+  src: url("/fonts/fonntscom-Begum-.otf") format("opentype");
+  font-weight: 20;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Samarkan";
+  src: url("/fonts/SAMARN__.TTF") format("truetype");
+  font-weight: 20;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "YatraOne", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+
+/* Headings scaling */
+h1 {
+  font-size: 3rem; /* previously smaller */
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+h6 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.25rem; 
+}
+
+/* Shangri-La */
+@font-face {
+  font-family: "Shangri-La";
+  src: url("/fonts/Shangrilanf-Xr5Z.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Tailwind Custom Fonts */
+:root {
+  --font-heading: "Begum", sans-serif;
+  --font-serif: "YatraOne", serif;
+}
+
+/* Example usage */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
 }
 
 @custom-variant dark (&:is(.dark *));

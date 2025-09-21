@@ -47,7 +47,7 @@ export default function MoodboardPage() {
             title: "Block Print Dupatta",
             artisan: "Ravi Kumar",
             price: 1200,
-            image: "/block-print-dupatta.jpg",
+            image: "https://res.cloudinary.com/dsmxrbinn/image/upload/v1758376864/ajrakh-block-printing-indigo-dye-traditional-patte_jwmto4.jpg",
             similarity: 87,
           },
           {

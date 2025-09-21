@@ -25,7 +25,7 @@ export function DashboardHeader() {
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="relative h-10 w-10 rounded-full">
                 <Avatar className="h-10 w-10">
-                  <AvatarImage src="/artisan-profile.jpg" alt="Artisan" />
+                  <AvatarImage src="https://res.cloudinary.com/dsmxrbinn/image/upload/v1758457562/artisan-profile_zslmol.jpg  " alt="Artisan" />
                   <AvatarFallback className="bg-primary text-primary-foreground">AR</AvatarFallback>
                 </Avatar>
               </Button>

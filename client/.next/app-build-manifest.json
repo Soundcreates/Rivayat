@@ -21,6 +21,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/auth/page.js"
     ],
+    "/home/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/home/page.js"
+    ],
     "/dashboard/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -44,6 +49,7 @@
     "/dashboard/presence/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
+      "static/css/app/dashboard/presence/page.css",
       "static/chunks/app/dashboard/presence/page.js"
     ],
     "/dashboard/assistant/page": [
@@ -51,10 +57,30 @@
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/assistant/page.js"
     ],
-    "/_not-found/page": [
+    "/blog/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/chunks/app/blog/page.js"
+    ],
+    "/blog/[slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blog/[slug]/page.js"
+    ],
+    "/community/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/community/page.js"
+    ],
+    "/artisans/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/artisans/page.js"
+    ],
+    "/cart/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/cart/page.js"
     ]
   }
 }

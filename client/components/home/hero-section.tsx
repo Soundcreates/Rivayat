@@ -1,33 +1,59 @@
-import Image from "next/image"
+"use client"
+
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 export function HeroSection() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Hero Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://res.cloudinary.com/dsmxrbinn/image/upload/v1758380232/hero-weaver_otrxen.jpg"
-          alt="A Weaver's Story"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
+      <div
+        className="absolute inset-0 bg-cover bg-center z-0"
+        style={{
+          backgroundImage:
+            "url('https://res.cloudinary.com/dsmxrbinn/image/upload/v1758472907/website_bg_vn97ll.png')",
+        }}
+      >
         <div className="absolute inset-0 bg-primary/60" />
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-[var(--riv-parchment)] mb-6 text-balance">
-          A Weaver's Story
-        </h1>
-        <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed text-pretty">
-          Every thread tells a tale. Every craft carries centuries of wisdom. Discover authentic Indian artistry and the
-          passionate hands that create it.
-        </p>
-        <div className="flex justify-center">
+      <motion.div
+        className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.3 } },
+        }}
+      >
+        <motion.h1
+          className="font-serif text-5xl md:text-8xl lg:text-6xl font-bold text-[var(--riv-parchment)] mb-6"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Where Tradition meets Art
+        </motion.h1>
+
+
+        <motion.p
+          className="text-lg md:text-3xl text-primary-foreground/90 mb-8 max-w-22xl mx-auto leading-relaxed"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          Every thread tells a tale. Every craft carries centuries of wisdom. Discover authentic Indian artistry and
+          the passionate hands that create it.
+        </motion.p>
+
+        <motion.div
+          className="flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+        >
           <Button
             asChild
             variant="outline"
@@ -36,15 +62,19 @@ export function HeroSection() {
           >
             <Link href="/artisans">Meet the Artisans</Link>
           </Button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ repeat: Infinity, duration: 1.5 }}
+      >
         <div className="w-6 h-10 border-2 border-secondary rounded-full flex justify-center">
           <div className="w-1 h-3 bg-secondary rounded-full mt-2 animate-pulse" />
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

@@ -35,7 +35,7 @@ export default function LandingPage() {
       <img
         src="https://res.cloudinary.com/dsmxrbinn/image/upload/v1758380091/logo_hng7q9.png"
         alt="Rivayat Logo"
-        className="w-128 h-128 object-contain"
+        className="w-64 h-64 object-contain"
       />
       <div className="flex flex-col gap-6 w-full max-w-xs">
         <Button

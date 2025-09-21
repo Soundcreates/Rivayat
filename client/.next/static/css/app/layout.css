@@ -6,6 +6,7 @@
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
+    --font-serif: "Alcazar", "Playfair Display", serif;
     --color-red-50: oklch(97.1% 0.013 17.38);
     --color-red-100: oklch(93.6% 0.032 17.717);
     --color-red-200: oklch(88.5% 0.062 18.334);
@@ -64,8 +65,8 @@
     --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
-    --text-7xl: 4.5rem;
-    --text-7xl--line-height: 1;
+    --text-8xl: 6rem;
+    --text-8xl--line-height: 1;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
@@ -248,6 +249,9 @@
   }
   .invisible {
     visibility: hidden;
+  }
+  .visible {
+    visibility: visible;
   }
   .sr-only {
     position: absolute;
@@ -703,17 +707,14 @@
   .h-32 {
     height: calc(var(--spacing) * 32);
   }
-  .h-48 {
-    height: calc(var(--spacing) * 48);
+  .h-60 {
+    height: calc(var(--spacing) * 60);
   }
   .h-64 {
     height: calc(var(--spacing) * 64);
   }
   .h-80 {
     height: calc(var(--spacing) * 80);
-  }
-  .h-128 {
-    height: calc(var(--spacing) * 128);
   }
   .h-\[1\.15rem\] {
     height: 1.15rem;
@@ -861,9 +862,6 @@
   }
   .w-72 {
     width: calc(var(--spacing) * 72);
-  }
-  .w-128 {
-    width: calc(var(--spacing) * 128);
   }
   .w-\[100px\] {
     width: 100px;
@@ -1039,6 +1037,12 @@
   .translate-y-\[calc\(-50\%_-_2px\)\] {
     --tw-translate-y: calc(-50% - 2px);
     translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .scale-160 {
+    --tw-scale-x: 160%;
+    --tw-scale-y: 160%;
+    --tw-scale-z: 160%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
   }
   .rotate-45 {
     rotate: 45deg;
@@ -1681,6 +1685,12 @@
     --tw-gradient-to: transparent;
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
+  .bg-cover {
+    background-size: cover;
+  }
+  .bg-center {
+    background-position: center;
+  }
   .fill-current {
     fill: currentcolor;
   }
@@ -1866,6 +1876,10 @@
   .text-4xl {
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-5xl {
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
   .text-base {
     font-size: var(--text-base);
@@ -2804,6 +2818,13 @@
       }
     }
   }
+  .hover\:bg-\[\#A0522D\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #A0522D;
+      }
+    }
+  }
   .hover\:bg-\[\#e8e2d1\] {
     &:hover {
       @media (hover: hover) {
@@ -3024,6 +3045,13 @@
     &:hover {
       @media (hover: hover) {
         color: var(--sidebar-accent-foreground);
+      }
+    }
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
       }
     }
   }
@@ -4616,6 +4644,12 @@
       text-align: left;
     }
   }
+  .md\:text-3xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
   .md\:text-4xl {
     @media (width >= 48rem) {
       font-size: var(--text-4xl);
@@ -4628,22 +4662,16 @@
       line-height: var(--tw-leading, var(--text-5xl--line-height));
     }
   }
-  .md\:text-6xl {
+  .md\:text-8xl {
     @media (width >= 48rem) {
-      font-size: var(--text-6xl);
-      line-height: var(--tw-leading, var(--text-6xl--line-height));
+      font-size: var(--text-8xl);
+      line-height: var(--tw-leading, var(--text-8xl--line-height));
     }
   }
   .md\:text-sm {
     @media (width >= 48rem) {
       font-size: var(--text-sm);
       line-height: var(--tw-leading, var(--text-sm--line-height));
-    }
-  }
-  .md\:text-xl {
-    @media (width >= 48rem) {
-      font-size: var(--text-xl);
-      line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
   .md\:opacity-0 {
@@ -4732,10 +4760,10 @@
       padding-inline: calc(var(--spacing) * 8);
     }
   }
-  .lg\:text-7xl {
+  .lg\:text-6xl {
     @media (width >= 64rem) {
-      font-size: var(--text-7xl);
-      line-height: var(--tw-leading, var(--text-7xl--line-height));
+      font-size: var(--text-6xl);
+      line-height: var(--tw-leading, var(--text-6xl--line-height));
     }
   }
   .dark\:border-input {
@@ -5443,17 +5471,77 @@
 }
 @font-face {
   font-family: "Alcazar";
-  src: url("/fonts/alcazar.woff2") format("woff2");
-  font-weight: 400 700;
+  src: url("/fonts/alcazar-regular.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Shangri-La";
-  src: url("/fonts/shangri-la.woff2") format("woff2");
-  font-weight: 400 500 600;
+  font-family: "YatraOne";
+  src: url("/fonts/YatraOne-Regular.ttf") format("truetype");
+  font-weight: 20;
   font-style: normal;
   font-display: swap;
+}
+@font-face {
+  font-family: "Begum";
+  src: url("/fonts/fonntscom-Begum-.otf") format("opentype");
+  font-weight: 20;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Samarkan";
+  src: url("/fonts/SAMARN__.TTF") format("truetype");
+  font-weight: 20;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: "YatraOne", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 2rem;
+}
+h5 {
+  font-size: 2rem;
+}
+h6 {
+  font-size: 2rem;
+}
+p {
+  font-size: 1.25rem;
+}
+@font-face {
+  font-family: "Shangri-La";
+  src: url("/fonts/Shangrilanf-Xr5Z.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --font-heading: "Begum", sans-serif;
+  --font-serif: "YatraOne", serif;
+}
+.font-heading {
+  font-family: var(--font-heading);
+}
+.font-serif {
+  font-family: var(--font-serif);
 }
 :root {
   --riv-maroon: #480903;
@@ -5587,6 +5675,21 @@
   syntax: "*";
   inherits: false;
   initial-value: 0;
+}
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
 }
 @property --tw-rotate-x {
   syntax: "*";
@@ -5864,21 +5967,6 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
 @property --tw-content {
   syntax: "*";
   initial-value: "";
@@ -5946,6 +6034,9 @@
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
       --tw-rotate-x: initial;
       --tw-rotate-y: initial;
       --tw-rotate-z: initial;
@@ -6010,9 +6101,6 @@
       --tw-backdrop-sepia: initial;
       --tw-duration: initial;
       --tw-ease: initial;
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
       --tw-content: "";
       --tw-animation-delay: 0s;
       --tw-animation-direction: normal;
