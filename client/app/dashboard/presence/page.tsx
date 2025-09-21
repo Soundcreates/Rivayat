@@ -7,10 +7,11 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
-import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { format } from "date-fns"
 import { CalendarIcon, Clock, ImageIcon, Video, Sparkles, Send, Copy, Instagram, Facebook, Twitter } from "lucide-react"
+import { Calendar } from "@/components/ui/calendar"
+import "react-day-picker/dist/style.css"
 
 export default function DigitalPresencePage() {
   const [captionText, setCaptionText] = useState("")
@@ -205,19 +206,22 @@ export default function DigitalPresencePage() {
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0">
-                    <Calendar mode="single" selected={scheduledDate} onSelect={setScheduledDate} initialFocus />
+                    <Calendar mode="single" selected={scheduledDate} onSelect={setScheduledDate} autoFocus />
                   </PopoverContent>
                 </Popover>
               </div>
-              <div className="grid gap-2">
-                <Label htmlFor="schedule-time">Time</Label>
-                <Input
-                  id="schedule-time"
-                  type="time"
-                  value={scheduledTime}
-                  onChange={(e) => setScheduledTime(e.target.value)}
-                />
-              </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="schedule-time">Time</Label>
+                  <Input
+                    id="schedule-time"
+                    type="time"
+                    value={scheduledTime}
+                    onChange={(e) => setScheduledTime(e.target.value)}
+                    className="hover:bg-[#A0522D] hover:text-white transition-colors duration-200"
+                  />
+                </div>
+
+
             </div>
 
             <div className="grid gap-2">

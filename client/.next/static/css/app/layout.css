@@ -249,6 +249,9 @@
   .invisible {
     visibility: hidden;
   }
+  .visible {
+    visibility: visible;
+  }
   .sr-only {
     position: absolute;
     width: 1px;
@@ -703,17 +706,11 @@
   .h-32 {
     height: calc(var(--spacing) * 32);
   }
-  .h-48 {
-    height: calc(var(--spacing) * 48);
-  }
   .h-64 {
     height: calc(var(--spacing) * 64);
   }
   .h-80 {
     height: calc(var(--spacing) * 80);
-  }
-  .h-128 {
-    height: calc(var(--spacing) * 128);
   }
   .h-\[1\.15rem\] {
     height: 1.15rem;
@@ -861,9 +858,6 @@
   }
   .w-72 {
     width: calc(var(--spacing) * 72);
-  }
-  .w-128 {
-    width: calc(var(--spacing) * 128);
   }
   .w-\[100px\] {
     width: 100px;
@@ -1680,6 +1674,12 @@
   .to-transparent {
     --tw-gradient-to: transparent;
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .bg-cover {
+    background-size: cover;
+  }
+  .bg-center {
+    background-position: center;
   }
   .fill-current {
     fill: currentcolor;
@@ -2804,6 +2804,13 @@
       }
     }
   }
+  .hover\:bg-\[\#A0522D\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #A0522D;
+      }
+    }
+  }
   .hover\:bg-\[\#e8e2d1\] {
     &:hover {
       @media (hover: hover) {
@@ -3024,6 +3031,13 @@
     &:hover {
       @media (hover: hover) {
         color: var(--sidebar-accent-foreground);
+      }
+    }
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
       }
     }
   }

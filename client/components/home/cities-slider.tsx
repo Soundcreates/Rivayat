@@ -48,18 +48,19 @@ export function CitiesSlider() {
                   <Card className="mx-2 overflow-hidden shadow-lg">
                     <div className="relative h-64 md:h-80">
                       <Image
-                        src={`/abstract-geometric-shapes.png?height=320&width=600&query=${city.name} ${city.specialty} traditional crafts`}
+                        src={city.image}
                         alt={`${city.name} - ${city.specialty}`}
                         fill
                         className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 600px"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
                       <div className="absolute bottom-6 left-6 right-6 text-white">
                         <h3 className="font-serif text-2xl font-bold mb-2">{city.name}</h3>
                         <p className="text-sm opacity-90 mb-1">{city.state}</p>
-                        <p className="text-secondary font-medium">{city.specialty}</p>
+                        <p className="text-white font-medium">{city.specialty}</p>
                       </div>
+
                     </div>
                   </Card>
                 </div>
