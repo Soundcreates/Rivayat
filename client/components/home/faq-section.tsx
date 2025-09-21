@@ -53,8 +53,10 @@ export function FAQSection() {
           {faqs.map((faq, index) => (
             <Card key={index} className="shadow-sm">
               <CardContent className="p-0">
+                {/* Button without scale */}
                 <button
-                  className="w-full p-6 text-left flex items-center justify-between hover:bg-muted/50 transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between 
+                             hover:cursor-pointer transition-colors"
                   onClick={() => toggleFAQ(index)}
                 >
                   <h3 className="font-medium text-primary pr-4">{faq.question}</h3>
@@ -64,11 +66,17 @@ export function FAQSection() {
                     <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />
                   )}
                 </button>
-                {openIndex === index && (
+
+                {/* Animated expand/collapse */}
+                <div
+                  className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${
+                    openIndex === index ? "max-h-40" : "max-h-0"
+                  }`}
+                >
                   <div className="px-6 pb-6">
                     <p className="text-muted-foreground leading-relaxed text-pretty">{faq.answer}</p>
                   </div>
-                )}
+                </div>
               </CardContent>
             </Card>
           ))}

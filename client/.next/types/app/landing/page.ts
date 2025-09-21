@@ -1,4 +1,4 @@
-// File: C:\Users\syeda\Music\Rivayat\Rivayat\client\app\landing\page.tsx
+// File: D:\ProgrammingProjects\Hacks\GoogleHack\Rivayat\Rivayat\client\app\landing\page.tsx
 import * as entry from '../../../../app/landing/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

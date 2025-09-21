@@ -13,7 +13,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <Image
-                src="/brand/logo.jpg"
+                src="https://res.cloudinary.com/dsmxrbinn/image/upload/v1758380091/logo_hng7q9.png"
                 alt="Rivayat"
                 width={40}
                 height={40}

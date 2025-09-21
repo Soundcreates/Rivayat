@@ -35,17 +35,18 @@ export function Sidebar() {
       <div
         className={cn(
           "fixed inset-y-0 left-0 z-40 w-64 bg-sidebar border-r border-sidebar-border transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0",
-          isOpen ? "translate-x-0" : "-translate-x-full",
+          isOpen ? "translate-x-0" : "-translate-x-full", "bg-[#f3efe6]"
         )}
       >
         <div className="flex flex-col h-full">
           {/* Logo */}
-          <div className="flex items-center px-6 py-4 border-b border-sidebar-border">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-sidebar-primary rounded-md flex items-center justify-center">
-                <span className="text-sidebar-primary-foreground font-heading font-bold text-lg">R</span>
-              </div>
-              <span className="text-sidebar-foreground font-heading text-xl font-semibold">Rivayat</span>
+          <div className="flex-none flex items-center justify-center px-6 py-6 border-b border-sidebar-border">
+            <div className="h-32 w-full overflow-hidden rounded-md">
+              <img
+                src="https://res.cloudinary.com/dsmxrbinn/image/upload/v1758455440/retro_dot8d6.jpg"
+                alt="Rivayat Logo"
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
 
@@ -83,6 +84,7 @@ export function Sidebar() {
           </div>
         </div>
       </div>
+
 
       {/* Mobile overlay */}
       {isOpen && <div className="fixed inset-0 bg-black/50 z-30 md:hidden" onClick={() => setIsOpen(false)} />}

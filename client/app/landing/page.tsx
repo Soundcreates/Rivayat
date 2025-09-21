@@ -33,9 +33,9 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[var(--riv-maroon)] text-[var(--riv-parchment)] p-6">
       <img
-        src="/logo.png"
+        src="https://res.cloudinary.com/dsmxrbinn/image/upload/v1758380091/logo_hng7q9.png"
         alt="Rivayat Logo"
-        className="w-32 h-32 mb-8 object-contain"
+        className="w-128 h-128 object-contain"
       />
       <div className="flex flex-col gap-6 w-full max-w-xs">
         <Button
