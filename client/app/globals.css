@@ -19,6 +19,15 @@
 }
 
 @font-face {
+  font-family: "Begum";
+  src: url("/fonts/fonntscom-Begum-.otf") format("opentype");
+  font-weight: 20;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
   font-family: "Samarkan";
   src: url("/fonts/SAMARN__.TTF") format("truetype");
   font-weight: 20;
@@ -77,7 +86,7 @@ p {
 
 /* Tailwind Custom Fonts */
 :root {
-  --font-heading: "Samarkan", sans-serif;
+  --font-heading: "Begum", sans-serif;
   --font-serif: "YatraOne", serif;
 }
 

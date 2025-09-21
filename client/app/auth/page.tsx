@@ -63,7 +63,9 @@ export default function AuthPage() {
             alt="Rivayat"
             className="h-60 mx-auto scale-160"          
             />
-          <h1 className="text-2xl font-bold text-riv-maroon">Welcome to Rivayat</h1>
+         <h1 className="text-3xl font-bold text-riv-maroon whitespace-nowrap">
+          Welcome to Rivayat
+        </h1>
           <p className="text-riv-maroon/70">Discover authentic Indian crafts</p>
         </div>
 

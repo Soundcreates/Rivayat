@@ -707,9 +707,6 @@
   .h-32 {
     height: calc(var(--spacing) * 32);
   }
-  .h-50 {
-    height: calc(var(--spacing) * 50);
-  }
   .h-60 {
     height: calc(var(--spacing) * 60);
   }
@@ -5487,6 +5484,13 @@
   font-display: swap;
 }
 @font-face {
+  font-family: "Begum";
+  src: url("/fonts/fonntscom-Begum-.otf") format("opentype");
+  font-weight: 20;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: "Samarkan";
   src: url("/fonts/SAMARN__.TTF") format("truetype");
   font-weight: 20;
@@ -5530,7 +5534,7 @@ p {
   font-display: swap;
 }
 :root {
-  --font-heading: "Samarkan", sans-serif;
+  --font-heading: "Begum", sans-serif;
   --font-serif: "YatraOne", serif;
 }
 .font-heading {
